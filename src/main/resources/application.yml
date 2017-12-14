@@ -1,0 +1,56 @@
+# application properties
+app:
+  datasource:
+    name: springbootdb
+    host: localhost:3306
+    username: root
+    password: root
+
+spring:
+  # 数据库配置
+  datasource:
+    name: ${app.datasource.name}
+    url: jdbc:mysql://${app.datasource.host}/${app.datasource.name}?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: ${app.datasource.username}
+    password: ${app.datasource.password}
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+  http:
+    encoding.charset: UTF-8
+    encoding.enable: true
+    encoding.force: true
+  aop:
+    proxy-target-class: true
+
+  application:
+     name: shake-provider
+
+
+mybatis:
+  typeAliasesPackage : "org.spring.springboot.domain"
+  #checkConfig-location : false
+  mapper-locations : "classpath:mapper/*.xml"
+
+#hazelcast 缓存
+hazelcast:
+  cluster: true
+  servers:
+    - localhost:5701
+#
+kafka:
+  #broker: 172.16.5.90:9092
+  broker: localhost:9092
+  topic: topic1
+  group: si.group
+  partions: 6
+  timeout: 15000
+  topics:
+      - recharge_order_dev
+      - order_storage_dev
+logging:
+  level:
+    org.springframework.web: ERROR
+    org.springboot: info
+
+

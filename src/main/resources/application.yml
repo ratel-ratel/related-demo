@@ -29,6 +29,16 @@ spring:
                 data: target/elasticsearch/data
                 tcp.connect_timeout: 120s
 
+##redis
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password:
+#    pool:
+#      max-idle:
+#      max-idle:
+#      max-idle:
+#      max-idle:
 #kafka
 #  kafka:   原配置文件
 #    bootstrap-servers: 127.0.0.1:9092,192.168.0.152:9093

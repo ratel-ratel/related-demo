@@ -18,7 +18,7 @@ public class CacheTest {
     @Autowired
     private HazelcastInstance hazelcast;
 
-    @Scheduled(cron = "0 56 19 * * *")
+    @Scheduled(cron = "0 48 17 * * *")
     public void haze了castTest() {
         String key = "hello Word";
         log.info("放入缓存开始.....");

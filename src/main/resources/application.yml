@@ -1,4 +1,3 @@
-# application properties
 app:
   datasource:
     name: springbootdb
@@ -15,6 +14,20 @@ spring:
     password: ${app.datasource.password}
     driver-class-name: com.mysql.jdbc.Driver
 
+  jackson:
+    generator:
+      WRITE_NUMBERS_AS_STRINGS: true
+  data:
+        elasticsearch:
+          cluster-name: elasticsearch
+          cluster-nodes: 127.0.0.1:9300
+          repositories:
+              enabled: true
+              path:
+                home: target/elasticsearch
+                logs: target/elasticsearch/log
+                data: target/elasticsearch/data
+                tcp.connect_timeout: 120s
 
   http:
     encoding.charset: UTF-8
@@ -25,7 +38,10 @@ spring:
 
   application:
      name: shake-provider
-
+logging:
+  level:
+    org.springframework.web: ERROR
+    org.springboot: info
 
 mybatis:
   typeAliasesPackage : "org.spring.springboot.domain"
@@ -37,7 +53,7 @@ hazelcast:
   cluster: true
   servers:
     - localhost:5701
-#
+#kafka
 kafka:
   #broker: 172.16.5.90:9092
   broker: localhost:9092
@@ -48,9 +64,7 @@ kafka:
   topics:
       - recharge_order_dev
       - order_storage_dev
-logging:
-  level:
-    org.springframework.web: ERROR
-    org.springboot: info
+
+
 
 

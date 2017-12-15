@@ -1,0 +1,8 @@
+{
+  "index":
+  {
+    "max_result_window": 10000000,
+    "number_of_shards": 15,
+    "number_of_replicas": 0 //1 是分片存储
+  }
+}

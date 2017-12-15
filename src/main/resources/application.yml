@@ -29,6 +29,29 @@ spring:
                 data: target/elasticsearch/data
                 tcp.connect_timeout: 120s
 
+#kafka
+#  kafka:   原配置文件
+#    bootstrap-servers: 127.0.0.1:9092,192.168.0.152:9093
+#    consumer:
+#      group-id: myGroup
+#    template:
+#      default-topic:
+#    listener:
+#      concurrency: 3
+#    producer:
+#      batch-size: 1000
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: myGroup
+    topics:
+        - recharge_order_dev
+    listener:
+      concurrency: 3
+    producer:
+      batch-size: 1000
+
+
   http:
     encoding.charset: UTF-8
     encoding.enable: true
@@ -53,17 +76,7 @@ hazelcast:
   cluster: true
   servers:
     - localhost:5701
-#kafka
-kafka:
-  #broker: 172.16.5.90:9092
-  broker: localhost:9092
-  topic: topic1
-  group: si.group
-  partions: 6
-  timeout: 15000
-  topics:
-      - recharge_order_dev
-      - order_storage_dev
+
 
 
 

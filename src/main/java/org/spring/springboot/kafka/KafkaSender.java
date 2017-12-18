@@ -32,7 +32,7 @@ public class KafkaSender {
     /**
      * 发布kafka消息 进行确认提交
      */
-    @Scheduled(cron = "0 25 15 * * *")
+//    @Scheduled(cron = "0 25 15 * * *")
     public void sendKafka() {
         String send = UUID.randomUUID().toString();
         ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(rechargeTopic, "recharge", send);

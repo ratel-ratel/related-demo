@@ -30,7 +30,6 @@ public class HCacheMapUtil {
                 || StringUtils.isEmpty(cacheKey) || null == data) {
             return OperateFlagConstant.INTEGER_FALSE;
         }
-
         // 获取cache IMap对象
         IMap<String, T> cacheMap = hInstance.getMap(namespace);
         cacheMap.put(cacheKey, data);

@@ -30,7 +30,12 @@
             <artifactId>hazelcast-all</artifactId>
             <version>${hazelcast.version}</version>
         </dependency>
-
+        <!--redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
         <!-- Spring Boot Elasticsearch 依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

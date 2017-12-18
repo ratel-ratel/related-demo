@@ -34,7 +34,6 @@ public interface TownRepository extends ElasticsearchRepository<Town, Long> {
 
     /**
      * 查询城市描述
-     *
      * 等同于下面代码
      * @Query("{\"bool\" : {\"must\" : {\"term\" : {\"description\" : \"?0\"}}}}")
      * Page<City> findByDescription(String description, Pageable pageable);

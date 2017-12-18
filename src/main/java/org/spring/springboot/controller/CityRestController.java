@@ -1,6 +1,5 @@
 package org.spring.springboot.controller;
 
-import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import lombok.extern.slf4j.Slf4j;
 import org.spring.springboot.cache.HCacheMapUtil;

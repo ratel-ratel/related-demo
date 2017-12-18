@@ -18,8 +18,8 @@ public class CacheTest {
     @Autowired
     private HazelcastInstance hazelcast;
 
-    @Scheduled(cron = "0 48 17 * * *")
-    public void haze了castTest() {
+    @Scheduled(cron = "0 57 17 * * *")
+    public void hazecastTest() {
         String key = "hello Word";
         log.info("放入缓存开始.....");
         int put = HCacheMapUtil.put(hazelcast, "HAZELCAST", "key", key);

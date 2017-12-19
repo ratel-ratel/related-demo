@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import redis.clients.jedis.Jedis;
+
+import java.util.UUID;
 
 /**
  * Created by nice on 2017/12/14.
@@ -17,7 +20,6 @@ import org.springframework.stereotype.Service;
 public class CacheTest {
     @Autowired
     private HazelcastInstance hazelcast;
-
     @Scheduled(cron = "0 57 17 * * *")
     public void hazecastTest() {
         String key = "hello Word";

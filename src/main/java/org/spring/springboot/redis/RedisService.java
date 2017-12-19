@@ -85,7 +85,6 @@ public class RedisService {
         if (null == delta) {
             delta = 1L;
         }
-        Class<StringRedisSerializer> stringRedisSerializerClass = StringRedisSerializer.class;
         try {
             ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
             Long increment = operations.increment(key, delta);
@@ -99,7 +98,6 @@ public class RedisService {
     // key 增量小数值
     public Double increment(String key, double delta) {
         boolean flag = false;
-        Class<StringRedisSerializer> stringRedisSerializerClass = StringRedisSerializer.class;
         try {
             ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
             Double increment = operations.increment(key, delta);
@@ -110,5 +108,5 @@ public class RedisService {
         }
         return null;
     }
-    
+
 }
